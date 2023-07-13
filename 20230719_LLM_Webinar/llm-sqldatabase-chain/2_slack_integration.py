@@ -52,8 +52,8 @@ os.environ['SLACK_BOT_TOKEN'] = dbutils.secrets.get("fieldeng", "slack_bot")
 os.environ['SLACK_APP_TOKEN'] = dbutils.secrets.get("fieldeng", "slack_app") 
 
 # Databricks Access 情報
-os.environ['DATABRICKS_HOST'] ="adb-984752964297111.11.azuredatabricks.net"  
-os.environ['DATABRICKS_WAREHOUSEID'] ="cf8e3ce76d2288d6"   
+os.environ['DATABRICKS_HOST'] ="<databricks_hostname>"  
+os.environ['DATABRICKS_WAREHOUSEID'] ="<warehouseID>"   
 os.environ['DATABRICKS_TOKEN'] = dbutils.secrets.get("fieldeng","modelserving-token")
 
 # COMMAND ----------
