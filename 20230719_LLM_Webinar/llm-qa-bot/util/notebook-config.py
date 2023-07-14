@@ -11,7 +11,7 @@ config['vector_store_path'] = '/dbfs/tmp/qabot_ja/vector_store'
 # COMMAND ----------
 
 # DBTITLE 1,カタログ＆データベースの作成
-config['catalog_name'] = 'jmaru_catalog'
+config['catalog_name'] = '<catalog>'
 config['schema_name'] = 'qabot_ja'
 
 # create catalog & database if not exists
@@ -28,7 +28,7 @@ _ = spark.sql(f"use {config['catalog_name']}.{config['schema_name']}")
 import os
 
 # 実際に設定したシークレットのスコープとキーを指定します
-os.environ['OPENAI_API_KEY'] = dbutils.secrets.get("fieldeng", "maru-openai")  
+os.environ['OPENAI_API_KEY'] = dbutils.secrets.get("<scope>", "<key>")  
 
 # COMMAND ----------
 
@@ -58,8 +58,8 @@ config['temperature'] = 0.15
 # DBTITLE 1,デプロイメントの設定
 # Model Serving Endpointに設定する情報です。
 # Secret Scope / Key を変更ください。
-config['openai_key_secret_scope'] = "fieldeng" 
-config['openai_key_secret_key'] = "maru-openai" 
+config['openai_key_secret_scope'] = "<scope>" 
+config['openai_key_secret_key'] = "<key>" 
 
 # Model Serving Endpoint Nameを指定ください。
 config['serving_endpoint_name'] = "llm-qabot-endpoint-jmaru-jpn" 

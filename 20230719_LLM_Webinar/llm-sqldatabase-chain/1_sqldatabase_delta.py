@@ -30,7 +30,7 @@ from langchain.chat_models import ChatOpenAI
 
 # COMMAND ----------
 
-OPENAI_API_KEY = dbutils.secrets.get("fieldeng", "maru-openai") 
+OPENAI_API_KEY = dbutils.secrets.get("<scope>", "<key>") 
 
 # COMMAND ----------
 
@@ -93,7 +93,7 @@ from pyspark.sql.types import StructType, StructField, StringType, TimestampType
 from pyspark.sql.functions import current_timestamp, date_format
 
 # 保存先テーブルの作成
-d_catalog = "jmaru_catalog"
+d_catalog = "<catalog>"
 d_schema = "llmdb"
 d_table = "query_history"
 

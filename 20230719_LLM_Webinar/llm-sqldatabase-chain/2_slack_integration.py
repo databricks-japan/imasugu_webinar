@@ -45,7 +45,7 @@ dbutils.library.restartPython()
 
 import os
 # OpenAI Secret Key
-os.environ['OPENAI_API_KEY'] = dbutils.secrets.get("fieldeng", "maru-openai") 
+os.environ['OPENAI_API_KEY'] = dbutils.secrets.get("<scope>", "<key>") 
 
 # Slack 連携しない場合は、以下は不要
 os.environ['SLACK_BOT_TOKEN'] = dbutils.secrets.get("fieldeng", "slack_bot") 
@@ -99,7 +99,7 @@ db_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
 def delta_chain(input):
 
   # 保存先テーブルの作成
-  d_catalog = "jmaru_catalog"
+  d_catalog = "<catalog>"
   d_schema = "llmdb"
   d_table = "query_history"
 
